@@ -1,0 +1,750 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins:ital", sans-serif;
+}
+
+/* Corpo */
+body {
+  line-height: 1.6;
+  background-color: #bbdefb;
+  min-height: 100vh;
+}
+
+/* Garantir que o conteúdo ocupe 100% da largura da tela */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* CABEÇALHO (mainHeader)*/
+#mainHeader {
+  background-color: #004085e4;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4em 0 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0 50px 50px 0px;
+  margin-left: 0;
+}
+
+#logo {
+  width: 70px;
+  transition: all 0.4s ease-in-out;
+}
+
+.logo p {
+  color: #000;
+  font-weight: 800;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  margin-left: 0.5rem;
+  background-color: transparent !important;
+}
+
+/* Estilos do menu Desktop */
+.nav-menu ul {
+  list-style-type: none;
+}
+
+.nav-menu ul li {
+  display: inline-block;
+  padding: 0 3rem;
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow: 0px 2px 4px #000;
+  transition: 0.5s all ease-in-out;
+}
+
+.nav-menu ul li:hover {
+  transform: scale(1);
+}
+
+.nav-menu ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+.nav-menu ul li a:hover {
+  color: #000;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+/* Efeito do background do menu */
+.nav-menu a::after {
+  content: " ";
+  width: 0%;
+  height: 40px;
+  background-color: #f4f4f4;
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  transition: 0.5s all ease-in-out;
+  z-index: -1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #000;
+  padding-top: 2px;
+}
+
+.nav-menu a:hover::after {
+  width: 80%;
+}
+
+.btn {
+  background-color: transparent;
+  max-width: 12rem;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0px 1px 6px 1px #fff;
+  text-shadow: 0px 2px 4px #000;
+  /* Criado e Desenvolvipo por: Isaque Ribeiro Duarte → 28/10/2024 */
+  transition: 0.4s all ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.03);
+  box-shadow: 2px 3px 8px #000;
+  text-shadow: none !important;
+  color: #000;
+}
+/* FIM DO CABEÇALHO (mainHeader) */
+
+/* SEÇÃO PRINCIPAL (HERO)*/
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5em 2em;
+  overflow: hidden; /* Garante que o conteúdo extra da película seja contido */
+  color: #f4f4f4;
+}
+
+/* Imagem de fundo separada */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/IMAGES/Trucks.jpg") no-repeat center center/cover;
+  z-index: -1; /* Imagem de fundo na camada inferior */
+}
+
+/* Película sobre a imagem */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.767
+  );
+  /* Película preta com 50% de opacidade, acima da imagem de fundo*/
+  z-index: 2; 
+}
+
+/* Certificando que o conteúdo fique na camada superior à película */
+.hero h2,
+.hero p,
+.hero {
+  position: relative;
+  z-index: 3; /* Conteúdo acima da película */
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  z-index: 100;
+}
+
+.hero h2 span {
+  color: #00bfff;
+  font-size: 2.3rem;
+  text-shadow: 0px 2px 4px #000;
+}
+
+.hero p strong {
+  color: #00bfff;
+  text-shadow: 0px 2px 4px #000;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.hero p span {
+  color: #f4f4f4;
+}
+
+.hero p {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  text-shadow: 0px 2px 6px #000;
+}
+
+/* FIM DA SEÇÃO PRINCIPAL (HERO) */
+
+/* ESTILO GERAL DO H2 E DO SPAN H2 */
+h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0px 2px 4px #000;
+}
+
+h2 span {
+  color: #00bfff;
+}
+/* FIM ESTILO GERAL DO H2 E DO SPAN H2 */
+
+
+/* SEÇÕES: SOBRE NÓS (ABOUT) & MISSÃO (MISSION) */
+.about, .mission {
+  margin: 40px 8%;
+  padding: 4em 2em;
+  text-align: center;
+  box-shadow: 0px 4px 14px #000;
+  margin-bottom: 3em;
+  border-radius: 15px;
+  transition: 0.4s all ease-in-out;
+  background-color: #f4f4f4;
+}
+
+.about:hover, .mission:hover {
+  transform: scale(1.02);
+  box-shadow: 4px 4px 14px #000000cc;
+  background-color: #004085ae;
+}
+
+.about p, .mission p {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 4% 1.2rem 4%;
+}
+
+#about:hover > p, #mission:hover > p {
+  color: #f4f4f4;
+  text-shadow: 0px 2px 4px #000;
+  span {
+    color: #00bfff;
+  }
+}
+
+#about:hover > h2, #mission:hover > h2 {
+    color: #00bfff;
+  span {
+    color: #fff;
+  }
+}
+/* FIM DAS SEÇÕES: SOBRE NÓS (ABOUT) & MISSÃO (MISSION) */
+
+/* SEÇÃO NOSSAS ATUAÇÕES (SERVICE) */
+.container {
+  margin: 0 5%;
+  border-radius: 15px;
+  padding-bottom: 4%;
+  align-items: center;
+  h2 {
+    margin-top: 5rem;
+  }
+}
+
+.card-wrapper {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.card-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-list .card-item .card-atuacoes {
+  user-select: none;
+  display: block;
+  background: #f4f4f4;
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 3px solid transparent;
+  box-shadow: 0px 3px 8px #000;
+  transition: 0.4s ease;
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #000;
+  }
+  .badge {
+    color: #013d76;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 16px 0 18px;
+    background: #f4f4f4;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px #000000cc;
+  }
+  .card-title {
+    color: #013d76;
+    font-weight: 800;
+  }
+  .card-link {
+    background-color: #F4F4F4;
+  }
+}
+
+.card-list .card-item .card-atuacoes:hover {
+  transform: scale(1.05);
+  background-color: #00508577;
+  .card-image {
+    box-shadow: 0px 2px 8px 2px #000;
+    border: 1px solid #fff;
+  }
+  .badge {
+    background-color: #257cb6;
+    color: #fff;
+    text-shadow: 0px 2px 3px #000;
+    box-shadow: 0px 2px 6px #000;
+  }
+  .card-title {
+    color: #fff;
+    text-shadow: 0px 2px 4px #000;
+  }
+  .card-link {
+    color: #014a7a;
+    box-shadow: 0px 2px 6px #000;
+  }
+} 
+
+.card-list .card-atuacoes .card-title {
+  font-size: 1rem;
+  color: #000;
+  height: 80px;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+}
+
+.card-list .card-atuacoes .card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 4px 6px;
+  color: #00bff0;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+  transition: 0.4s all ease-in-out;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.card-list .card-atuacoes:hover .card-link:hover {
+  background-color: #014a7a;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0px 2px 4px #000;
+  box-shadow: 2px 4px 8px #f4f4f4;
+}
+/* FIM DA SEÇÃO NOSSAS ATUAÇÕES (SERVICE) */
+
+/* ESTILOS PARA OS MODAIS */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  z-index: 100;
+  left: -100%; /* Posiciona o modal fora da tela no início */
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza o modal verticalmente */
+  width: 80%; /* Ajuste da largura para 80% da tela */
+  max-width: 1280px; /* Define uma largura máxima para o modal */
+  height: auto; /* A altura se ajusta automaticamente ao conteúdo */
+  max-height: 95vh; /* Limita a altura a 90% da altura da tela */
+  background-color: #032354; /* Fundo azul escuro, sem transparência */
+  box-shadow: 2px 5px 15px #000;
+  border-radius: 10px; /* Cantos arredondados */
+  overflow: hidden; /* Remove a barra de rolagem */
+  transition: left 0.55s ease-in-out; /* Transição suave horizontal */
+}
+
+.modal-content {
+  padding: 40px;
+  text-align: center;
+}
+
+.modal .modal-content .modal-info {
+  text-shadow: 0 2px 4px #000;
+  color: #fff;
+}
+
+.modal .modal-content .modal-info span {
+  color: #00bff0;
+  font-weight: 750;
+}
+
+/* Quando o modal está ativo (aberto) */
+.modal.show {
+  left: 50%; /* Traz o modal para o centro da tela horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza também horizontalmente */
+}
+
+/* Botão de fechar */
+.close-btn {
+  background-color: #fff; /* Fundo branco */
+  color: #da1e37; /* Cor do texto vermelhor */
+  border: none; /* Remove borda padrão */
+  border-radius: 5px; /* Cantos arredondados */
+  box-shadow: 1px 2px 6px #000; /* Sombreamento do Background */
+  text-shadow: 0px 1px 2px #000; /* Sombreamento do texto */
+  position: absolute;
+  top: 15px; /* Distância do topo */
+  right: 15px; /* Distância da direita */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 15px; /* Padding igual em todos os lados, formando um quadrado */
+  margin: 0; /* Margem zero para manter o botão quadrado */
+  width: 25px; /* Largura fixa */
+  height: 25px; /* Altura fixa */
+  display: flex; /* Usando flexbox para centralizar o "x" */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background-color: #da1e37; /* Muda para vermelho no hover */
+  color: #F4F4F4; /* Muda o "x" para cor clara no hover */
+  opacity: 0.9; /* Leve opacidade ao passar o mouse */
+  text-shadow: 0px 2px 3px #000; /* Sombreamento do texto */
+}
+
+/* Título do modal */
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.2em;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0px 2px 4px #000;
+  
+}
+
+/* Informação dentro do modal */
+.modal-info {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  margin-left: 2rem;
+  color: #f4f4f4;
+}
+
+/* Estilos para a Modal2 */
+  /* O fundo da modal */
+  .modal2 {
+    display: none;  /* Inicialmente escondido */
+    position: fixed; /* Fixa a modal na tela */
+    z-index: 1; /* Fica em cima de outros conteúdos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    overflow: auto; /* Caso o conteúdo da modal seja maior, cria rolagem */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor semitransparente de fundo */
+  }
+
+  /* Conteúdo da modal */
+  .modal2-content {
+    background-color: #FFFAFA; /* Fundo azul escuro, sem transparência */
+    box-shadow: 2px 5px 15px #000;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Tamanho da modal */
+    max-width: 500px; /* Largura máxima */
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Estilos do botão de fechar */
+  .close-btn2 {
+    color: #fff; /* Cor do texto vermelhor */
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5px 8px;
+    border-radius: 5px;
+    background-color: #aaaaaaa0;
+    box-shadow: 0px 1px 6px #000; /* Sombreamento do Background */
+    text-shadow: 0px 1px 2px #000; /* Sombreamento do texto */
+  }
+
+  .close-btn2:hover,
+  .close-btn2:focus {
+    color: #fff;
+    background-color: #da1e37;
+    transform: scale(1.08);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9; /* Leve opacidade ao passar o mouse */
+    text-shadow: 0px 2px 3px #000; /* Sombreamento do texto */
+    box-shadow: 1px 2px 6px #000; /* Sombreamento do Background */
+  }
+
+  /* Estilos da mensagem */
+  #alertMessage {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0092e0;
+  }
+
+/* Responsivo para telas menores */
+@media screen and (max-width: 768px) {
+  .modal {
+      width: 90%; /* Ajuste para telas pequenas */
+  }
+}
+/* FIM DOS ESTILOS PARA OS MODAIS */
+
+/* SEÇÃO FALE CONOSCO (CONTACT) */
+.contact {
+  padding: 4em 2em 2rem 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  margin: 0.5em 0;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  background-color: #004085e4;
+  color: white;
+  margin: 1rem 0;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Estilos dos Links */
+.social-links ul {
+  list-style-type: none;
+}
+
+.social-links ul li {
+  font-size: 2.8rem;
+  display: inline-block;
+  margin: 0 40px;
+}
+
+.social-links ul li a {
+  text-decoration: none;
+}
+
+.social-links ul li a svg {
+  color: #0092e0;
+  background-color: transparent;
+  transition: 0.3s all ease-in-out;
+}
+
+.social-links ul li a #email svg:hover  {
+  color: #da1e37;
+  transform: scale(1.08);
+}
+
+.social-links ul li a #whats svg:hover  {
+  color: #1ebb58;
+  transform: scale(1.08);
+}
+
+.social-links ul li a #insta svg:hover  {
+  color: #5d3ecf;
+  transform: scale(1.08);
+}
+
+.address {
+  text-decoration: none;
+  /* margin-top: 1rem;
+  color: #002f61e4; */
+}
+
+.endereco {
+  text-decoration: none;
+  margin-top: 1rem;
+  color: #002f61e4;
+}
+
+.main-footer {
+  background-color: #002f61e4;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1em 0;
+  .autor {
+    margin-top: 8px;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  #logoProgramador {
+    width: 80px;
+    background-color: #c9c9c998;
+    padding: 0 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px #000000c4;
+  }
+}
+
+/* Estilo do popup LGPD */
+#lgpd-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  background-color: #f4f3ee;
+  color: #000;
+  padding: 1.2rem;
+  text-align: center;
+  display: none; /* Inicialmente escondido */
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #000000c4;
+  animation: flutuante 3s ease-in-out infinite;
+}
+
+@keyframes flutuante {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#lgpd-popup p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#lgpd-popup p a {
+  color: #00aeff;
+  font-weight: 550;
+  text-decoration: underline;
+}
+
+#lgpd-popup p a:hover {
+  color: #00679e;
+}
+
+#lgpd-accept {
+  background-color: #00aeff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #000;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#lgpd-accept:hover {
+  box-shadow: 0 2px 6px #000;
+  color: #fff;
+  background-color: #0077b8;
+}
+
+/* Estilo dos ícones sociais */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-menu ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-menu ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+}
